@@ -9,7 +9,7 @@ app = FastAPI()
 
 
 @app.get("/calendar/")
-def read_day_itinerary(date: str=CURRENT_DATE, tmz: Timezones | None = None):
+def read_day_itinerary(date: str=CURRENT_DATE, tmz: Timezones | None = Timezones.GMT):
     return {"date":date, "tmz":tmz}
 
 @app.post("/booking/")
