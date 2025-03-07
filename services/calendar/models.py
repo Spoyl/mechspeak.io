@@ -1,5 +1,7 @@
 from pydantic import BaseModel
 from enum import Enum
+from datetime import date
+
 
 
 class Timezones(str, Enum):
@@ -7,8 +9,11 @@ class Timezones(str, Enum):
     Bali = "Bali"
     France = "France"
 
-class Booking(BaseModel):
-    date: str
-    start_time: str
-    length: int
-    teacher: str
+
+class Lesson(BaseModel):
+    dat: str
+    start: str
+    dur: int
+    paid: bool
+    who: str | None = None
+    lesson_id: str
